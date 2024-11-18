@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'catalog_item.dart';  // Import CatalogItem
+import 'catalog_item.dart'; // Import CatalogItem
 
 class CatalogPage extends StatelessWidget {
   @override
@@ -8,13 +8,6 @@ class CatalogPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Stack(
           children: [
             // Tombol kembali
@@ -28,11 +21,11 @@ class CatalogPage extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade400,
+                    color: Colors.grey.shade200, // Warna netral untuk tombol kembali
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.grey.shade400,
                         blurRadius: 6,
                         offset: Offset(2, 4),
                       ),
@@ -40,7 +33,7 @@ class CatalogPage extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.arrow_back,
-                    color: Colors.white,
+                    color: Colors.black87, // Warna gelap untuk ikon
                     size: 24,
                   ),
                 ),
@@ -57,13 +50,13 @@ class CatalogPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black87, // Warna teks gelap untuk kontras
                           fontFamily: 'Cursive',
                           shadows: [
                             Shadow(
                               offset: Offset(1, 1),
                               blurRadius: 3,
-                              color: Colors.black26,
+                              color: Colors.grey.shade300,
                             ),
                           ],
                         ),
@@ -72,7 +65,7 @@ class CatalogPage extends StatelessWidget {
                         'GIFT WITH LOVE',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.white70,
+                          color: Colors.grey.shade600, // Warna teks abu untuk subtitle
                           fontWeight: FontWeight.w400,
                           letterSpacing: 1.2,
                           fontFamily: 'Montserrat',
@@ -85,8 +78,15 @@ class CatalogPage extends StatelessWidget {
                     padding: EdgeInsets.all(16.0),
                     margin: EdgeInsets.symmetric(horizontal: 24.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
+                      color: Colors.pink.shade50, // Warna pastel pink untuk card header
                       borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade400,
+                          blurRadius: 6,
+                          offset: Offset(2, 4),
+                        ),
+                      ],
                     ),
                     child: Center(
                       child: Text(
@@ -109,7 +109,6 @@ class CatalogPage extends StatelessWidget {
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
                         childAspectRatio: 0.6, // Sesuaikan rasio untuk membuat item lebih tinggi
-                        shrinkWrap: true, // Menghindari overflow pada GridView
                         children: [
                           CatalogItem(
                             imageUrl: 'lib/app/assets/catalog1.jpg',

@@ -7,13 +7,6 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Stack(
           children: [
             // Custom Back Button at the top
@@ -27,11 +20,11 @@ class LoginPage extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade400,
+                    color: Colors.grey.shade200, // Warna netral untuk tombol kembali
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.grey.shade400,
                         blurRadius: 6,
                         offset: Offset(2, 4),
                       ),
@@ -39,7 +32,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.arrow_back,
-                    color: Colors.white,
+                    color: Colors.black87, // Warna gelap untuk ikon
                     size: 24,
                   ),
                 ),
@@ -59,13 +52,13 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black87, // Warna gelap agar kontras
                         fontFamily: 'Cursive',
                         shadows: [
                           Shadow(
                             offset: Offset(2, 2),
                             blurRadius: 5,
-                            color: Colors.black26,
+                            color: Colors.grey.shade300,
                           ),
                         ],
                       ),
@@ -75,7 +68,7 @@ class LoginPage extends StatelessWidget {
                       'GIFT WITH LOVE',
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white70,
+                        color: Colors.grey.shade600,
                         fontWeight: FontWeight.w400,
                         letterSpacing: 1.2,
                       ),
@@ -86,11 +79,11 @@ class LoginPage extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(24.0),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey.shade100, // Warna abu terang untuk card
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black12,
+                            color: Colors.grey.shade300,
                             spreadRadius: 2,
                             blurRadius: 8,
                             offset: Offset(4, 4),
@@ -105,7 +98,7 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.pink.shade400,
+                              color: Colors.pink.shade600, // Warna pink cerah untuk heading
                             ),
                           ),
                           SizedBox(height: 20),
@@ -115,7 +108,7 @@ class LoginPage extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: 'Username',
                               filled: true,
-                              fillColor: Colors.pink[50],
+                              fillColor: Colors.grey.shade200, // Warna netral untuk input
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                                 borderSide: BorderSide.none,
@@ -134,7 +127,7 @@ class LoginPage extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: 'Password',
                               filled: true,
-                              fillColor: Colors.pink[50],
+                              fillColor: Colors.grey.shade200, // Warna netral untuk input
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                                 borderSide: BorderSide.none,
@@ -153,7 +146,7 @@ class LoginPage extends StatelessWidget {
                               Get.toNamed('/adminpage');
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink.shade400,
+                              backgroundColor: Colors.pink.shade600, // Warna pink yang sama
                               padding: EdgeInsets.symmetric(
                                 vertical: 14.0,
                                 horizontal: 50.0,
@@ -161,7 +154,7 @@ class LoginPage extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              shadowColor: Colors.pink.shade200,
+                              shadowColor: Colors.pink.shade300,
                               elevation: 8,
                             ),
                             child: Text(

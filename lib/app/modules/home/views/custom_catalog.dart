@@ -7,13 +7,6 @@ class CustomCatalog extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
@@ -29,7 +22,7 @@ class CustomCatalog extends StatelessWidget {
                     'RG',
                     style: TextStyle(
                       fontSize: 100,
-                      color: Colors.pink.shade100,
+                      color: Colors.grey.shade200, // Warna abu muda untuk teks latar
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -40,7 +33,7 @@ class CustomCatalog extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.black87, // Warna teks gelap
                           fontFamily: 'Cursive',
                         ),
                       ),
@@ -48,7 +41,7 @@ class CustomCatalog extends StatelessWidget {
                         'GIFT WITH LOVE',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.grey,
+                          color: Colors.grey.shade600, // Warna abu untuk subtitle
                           letterSpacing: 1.2,
                           fontFamily: 'Montserrat',
                         ),
@@ -87,7 +80,7 @@ class CustomCatalog extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.black87, // Warna teks gelap untuk kontras
                           fontFamily: 'Montserrat',
                         ),
                       ),
@@ -99,7 +92,7 @@ class CustomCatalog extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.black87,
+                          color: Colors.grey.shade700, // Warna abu untuk deskripsi
                           fontFamily: 'Montserrat',
                         ),
                       ),
@@ -110,7 +103,7 @@ class CustomCatalog extends StatelessWidget {
                         'Rp. 104.400,00',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black87,
+                          color: Colors.pink.shade600, // Warna pink cerah untuk harga
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Montserrat',
                         ),
@@ -147,7 +140,7 @@ class CustomCatalog extends StatelessWidget {
                   Get.back();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink.shade400, // Consistent button color
+                  backgroundColor: Colors.pink.shade600, // Warna pink cerah untuk tombol
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

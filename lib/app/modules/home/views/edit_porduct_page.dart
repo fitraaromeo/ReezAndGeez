@@ -10,13 +10,6 @@ class EditProdukPage extends StatelessWidget {
           // Background and main content
           Container(
             width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.pink.shade100, Colors.pink.shade300],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -30,7 +23,7 @@ class EditProdukPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: Colors.pink.shade400,
+                          color: Colors.black87, // Warna teks gelap
                           fontFamily: 'Cursive',
                         ),
                       ),
@@ -38,7 +31,7 @@ class EditProdukPage extends StatelessWidget {
                         'GIFT WITH LOVE',
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.grey,
+                          color: Colors.grey.shade600, // Warna abu lembut
                         ),
                       ),
                     ],
@@ -52,11 +45,11 @@ class EditProdukPage extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
                   padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade200,
+                    color: Colors.pink.shade600, // Warna pink cerah untuk header
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.grey.shade400,
                         blurRadius: 4,
                         offset: Offset(2, 4),
                       ),
@@ -87,11 +80,11 @@ class EditProdukPage extends StatelessWidget {
                       // First product card
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.grey.shade100, // Warna abu terang untuk card
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black26,
+                              color: Colors.grey.shade300,
                               blurRadius: 4,
                               offset: Offset(2, 4),
                             ),
@@ -116,7 +109,7 @@ class EditProdukPage extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
-                                  color: Colors.black87,
+                                  color: Colors.black87, // Warna teks gelap untuk kontras
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -128,11 +121,11 @@ class EditProdukPage extends StatelessWidget {
                       // Second product card
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black26,
+                              color: Colors.grey.shade300,
                               blurRadius: 4,
                               offset: Offset(2, 4),
                             ),
@@ -183,11 +176,11 @@ class EditProdukPage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.pink.shade400,
+                  color: Colors.grey.shade200, // Warna abu terang untuk tombol
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black26,
+                      color: Colors.grey.shade400,
                       blurRadius: 6,
                       offset: Offset(2, 4),
                     ),
@@ -195,7 +188,7 @@ class EditProdukPage extends StatelessWidget {
                 ),
                 child: Icon(
                   Icons.arrow_back,
-                  color: Colors.white,
+                  color: Colors.black87, // Warna ikon gelap untuk kontras
                   size: 24,
                 ),
               ),
@@ -209,7 +202,7 @@ class EditProdukPage extends StatelessWidget {
         onPressed: () {
           // Implement action for adding new product
         },
-        backgroundColor: Colors.pink.shade400,
+        backgroundColor: Colors.pink.shade600, // Warna pink cerah untuk konsistensi
         child: Icon(Icons.add, size: 30, color: Colors.white),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,

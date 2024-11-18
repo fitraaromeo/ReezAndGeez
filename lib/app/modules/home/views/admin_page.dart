@@ -7,13 +7,6 @@ class AdminPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Stack(
           children: [
             // Custom Back Button at the top
@@ -27,11 +20,11 @@ class AdminPage extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade400,
+                    color: Colors.grey.shade200, // Warna netral untuk tombol kembali
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.grey.shade400,
                         blurRadius: 6,
                         offset: Offset(2, 4),
                       ),
@@ -39,7 +32,7 @@ class AdminPage extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.arrow_back,
-                    color: Colors.white,
+                    color: Colors.black87, // Warna gelap untuk ikon
                     size: 24,
                   ),
                 ),
@@ -59,13 +52,13 @@ class AdminPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black87, // Warna gelap untuk kontras
                         fontFamily: 'Cursive',
                         shadows: [
                           Shadow(
                             offset: Offset(2, 2),
                             blurRadius: 5,
-                            color: Colors.black26,
+                            color: Colors.grey.shade300,
                           ),
                         ],
                       ),
@@ -75,23 +68,23 @@ class AdminPage extends StatelessWidget {
                       'GIFT WITH LOVE',
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white70,
+                        color: Colors.grey.shade600,
                         fontWeight: FontWeight.w400,
                         letterSpacing: 1.2,
                       ),
                     ),
                     SizedBox(height: 50),
 
-                    // Larger Admin action container
+                    // Admin Action Container
                     Container(
-                      padding: EdgeInsets.all(32.0), // Increased padding for a larger card
-                      width: MediaQuery.of(context).size.width * 0.85, // Larger width
+                      padding: EdgeInsets.all(32.0),
+                      width: MediaQuery.of(context).size.width * 0.85,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey.shade100, // Warna abu terang untuk card
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black12,
+                            color: Colors.grey.shade300,
                             spreadRadius: 2,
                             blurRadius: 8,
                             offset: Offset(4, 4),
@@ -106,7 +99,7 @@ class AdminPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.pink.shade400,
+                              color: Colors.pink.shade600, // Warna pink cerah untuk heading
                             ),
                           ),
                           SizedBox(height: 30),
@@ -119,14 +112,14 @@ class AdminPage extends StatelessWidget {
                                 Get.toNamed('/editproduct');
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.pink.shade400,
+                                backgroundColor: Colors.pink.shade600, // Warna pink cerah
                                 padding: EdgeInsets.symmetric(
                                   vertical: 14.0,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                shadowColor: Colors.pink.shade200,
+                                shadowColor: Colors.pink.shade300,
                                 elevation: 8,
                               ),
                               child: Text(
@@ -141,7 +134,7 @@ class AdminPage extends StatelessWidget {
                           ),
                           SizedBox(height: 16),
 
-                          // Edit/tambahan FAQ Button
+                          // Edit FAQ Button
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
@@ -149,14 +142,14 @@ class AdminPage extends StatelessWidget {
                                 // Implement navigation or action for Edit FAQ
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.pink.shade400,
+                                backgroundColor: Colors.pink.shade600,
                                 padding: EdgeInsets.symmetric(
                                   vertical: 14.0,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                shadowColor: Colors.pink.shade200,
+                                shadowColor: Colors.pink.shade300,
                                 elevation: 8,
                               ),
                               child: Text(
@@ -171,22 +164,22 @@ class AdminPage extends StatelessWidget {
                           ),
                           SizedBox(height: 16),
 
-                          // New Orders Button
+                          // Orders Button
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                // Implement navigation or action for Orders
+                                Get.toNamed('/orderpage');
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.pink.shade400,
+                                backgroundColor: Colors.pink.shade600,
                                 padding: EdgeInsets.symmetric(
                                   vertical: 14.0,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                shadowColor: Colors.pink.shade200,
+                                shadowColor: Colors.pink.shade300,
                                 elevation: 8,
                               ),
                               child: Text(

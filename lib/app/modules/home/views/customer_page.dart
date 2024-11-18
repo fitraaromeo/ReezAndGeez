@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reez_and_geez1/app/modules/home/views/order_form_page.dart';
 import 'catalog_page.dart'; // Import the CatalogPage
 
 class CustomerPage extends StatelessWidget {
@@ -8,13 +9,6 @@ class CustomerPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Stack(
           children: [
             // Custom Back Button at the top
@@ -28,11 +22,11 @@ class CustomerPage extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade400,
+                    color: Colors.grey.shade200, // Warna abu terang untuk tombol kembali
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.grey.shade400,
                         blurRadius: 6,
                         offset: Offset(2, 4),
                       ),
@@ -40,7 +34,7 @@ class CustomerPage extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.arrow_back,
-                    color: Colors.white,
+                    color: Colors.black87, // Warna ikon gelap untuk kontras
                     size: 24,
                   ),
                 ),
@@ -58,13 +52,13 @@ class CustomerPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black87, // Warna teks gelap
                       fontFamily: 'Cursive',
                       shadows: [
                         Shadow(
                           offset: Offset(2, 2),
                           blurRadius: 5,
-                          color: Colors.black26,
+                          color: Colors.grey.shade300,
                         ),
                       ],
                     ),
@@ -74,7 +68,7 @@ class CustomerPage extends StatelessWidget {
                     'GIFT WITH LOVE',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white70,
+                      color: Colors.grey.shade600, // Warna abu lembut untuk subtitle
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
                       letterSpacing: 1.2,
@@ -84,17 +78,17 @@ class CustomerPage extends StatelessWidget {
 
                   // Main Content Card with optimized width
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.85, // Consistent width with previous page
+                    width: MediaQuery.of(context).size.width * 0.85, // Konsisten dengan halaman lain
                     constraints: BoxConstraints(
-                      maxWidth: 600, // Sets a max width for larger screens
+                      maxWidth: 600, // Maksimal lebar untuk layar besar
                     ),
                     padding: EdgeInsets.all(24.0),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.grey.shade100, // Warna abu terang untuk card
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black26,
+                          color: Colors.grey.shade300,
                           blurRadius: 10,
                           offset: Offset(4, 4),
                         ),
@@ -109,7 +103,7 @@ class CustomerPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Colors.pink.shade400,
+                            color: Colors.pink.shade600, // Warna pink cerah
                             fontFamily: 'Montserrat',
                           ),
                         ),
@@ -117,25 +111,25 @@ class CustomerPage extends StatelessWidget {
                           'Abadikan Cintamu ❤️',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.pink.shade200,
+                            color: Colors.pink.shade300, // Warna pink lembut
                             fontFamily: 'Montserrat',
                           ),
                         ),
                         SizedBox(height: 24),
 
-                        // Katalog Button with consistent size
+                        // Katalog Button
                         ConstrainedBox(
                           constraints: BoxConstraints(
-                            minWidth: 200, // Set consistent width for all buttons
+                            minWidth: 200,
                           ),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink.shade400,
+                              backgroundColor: Colors.pink.shade600, // Warna pink cerah
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40),
                               ),
                               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                              shadowColor: Colors.pink.shade200,
+                              shadowColor: Colors.pink.shade300, // Bayangan tombol lembut
                               elevation: 6,
                             ),
                             onPressed: () {
@@ -154,23 +148,23 @@ class CustomerPage extends StatelessWidget {
                         ),
                         SizedBox(height: 16),
 
-                        // Pemesanan Button with consistent size
+                        // Pemesanan Button
                         ConstrainedBox(
                           constraints: BoxConstraints(
-                            minWidth: 200, // Set consistent width for all buttons
+                            minWidth: 200,
                           ),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink.shade400,
+                              backgroundColor: Colors.pink.shade600,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40),
                               ),
                               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                              shadowColor: Colors.pink.shade200,
+                              shadowColor: Colors.pink.shade300,
                               elevation: 6,
                             ),
                             onPressed: () {
-                              Get.snackbar("Info", "Menuju halaman Pemesanan!");
+                              Get.to(OrderFormPage());
                             },
                             child: Text(
                               'Pemesanan',
@@ -185,19 +179,19 @@ class CustomerPage extends StatelessWidget {
                         ),
                         SizedBox(height: 16),
 
-                        // FAQ Button with consistent size
+                        // FAQ Button
                         ConstrainedBox(
                           constraints: BoxConstraints(
-                            minWidth: 200, // Set consistent width for all buttons
+                            minWidth: 200,
                           ),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink.shade400,
+                              backgroundColor: Colors.pink.shade600,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40),
                               ),
                               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                              shadowColor: Colors.pink.shade200,
+                              shadowColor: Colors.pink.shade300,
                               elevation: 6,
                             ),
                             onPressed: () {

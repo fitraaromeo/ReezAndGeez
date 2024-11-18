@@ -7,19 +7,12 @@ class PrintOnlyCatalog extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1), // 10% from top
+              SizedBox(height: MediaQuery.of(context).size.height * 0.1), // 10% dari atas
 
               // Title Section with "RG" background and overlay text
               Stack(
@@ -29,7 +22,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                     'RG',
                     style: TextStyle(
                       fontSize: 100,
-                      color: Colors.pink.shade100,
+                      color: Colors.grey.shade200, // Warna abu lembut untuk latar teks
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -40,7 +33,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.black87, // Warna teks utama
                           fontFamily: 'Cursive',
                         ),
                       ),
@@ -48,7 +41,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         'GIFT WITH LOVE',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.grey,
+                          color: Colors.grey.shade600, // Warna teks subtitle
                           letterSpacing: 1.2,
                           fontFamily: 'Montserrat',
                         ),
@@ -74,7 +67,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
                           'lib/app/assets/catalog2.jpg', // Replace with your image path
-                          width: double.infinity, // Makes image fill the available width
+                          width: double.infinity,
                           height: MediaQuery.of(context).size.height * 0.3, // 30% of screen height
                           fit: BoxFit.cover,
                         ),
@@ -87,7 +80,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Colors.black87,
                           fontFamily: 'Montserrat',
                         ),
                       ),
@@ -99,7 +92,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.black87,
+                          color: Colors.grey.shade700, // Warna abu lembut untuk deskripsi
                           fontFamily: 'Montserrat',
                         ),
                       ),
@@ -110,7 +103,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                         'Rp. 92.000,00 - Rp. 170.000,00',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black87,
+                          color: Colors.pink.shade600, // Warna pink cerah untuk harga
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Montserrat',
                         ),
@@ -135,7 +128,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                 'Keterangan Produk',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.black87,
+                  color: Colors.black87, // Warna teks gelap
                   fontFamily: 'Montserrat',
                 ),
               ),
@@ -147,7 +140,7 @@ class PrintOnlyCatalog extends StatelessWidget {
                   Get.back();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink.shade400, // Consistent button color
+                  backgroundColor: Colors.pink.shade600, // Warna pink cerah untuk tombol
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

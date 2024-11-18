@@ -7,13 +7,6 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.pink.shade100, Colors.pink.shade300],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -24,13 +17,13 @@ class LandingPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.black87, // Warna teks gelap untuk kontras
                   fontFamily: 'Cursive',
                   shadows: [
                     Shadow(
                       offset: Offset(2, 2),
                       blurRadius: 5,
-                      color: Colors.black38,
+                      color: Colors.grey.shade300, // Bayangan lembut
                     ),
                   ],
                 ),
@@ -41,7 +34,7 @@ class LandingPage extends StatelessWidget {
                 'GIFT WITH LOVE',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white70,
+                  color: Colors.grey.shade600, // Warna abu-abu sedang
                   fontFamily: 'Montserrat',
                   letterSpacing: 1.5,
                 ),
@@ -52,11 +45,11 @@ class LandingPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.85,
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 48),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.grey.shade100, // Card dengan warna abu-abu sangat terang
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
+                      color: Colors.grey.shade300, // Bayangan lembut
                       spreadRadius: 2,
                       blurRadius: 8,
                       offset: Offset(4, 4),
@@ -72,7 +65,7 @@ class LandingPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.pink.shade400,
+                        color: Colors.pink.shade600, // Warna pink tetap menarik
                         fontFamily: 'Montserrat',
                       ),
                     ),
@@ -82,7 +75,7 @@ class LandingPage extends StatelessWidget {
                       'Abadikan Cintamu',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.pink.shade200,
+                        color: Colors.grey.shade600, // Warna abu-abu lembut untuk tagline
                         fontFamily: 'Montserrat',
                       ),
                     ),
@@ -90,7 +83,7 @@ class LandingPage extends StatelessWidget {
                     // Admin Button with Icon
                     ConstrainedBox(
                       constraints: BoxConstraints(
-                        minWidth: 200, // Set width yang sama
+                        minWidth: 200,
                       ),
                       child: ElevatedButton.icon(
                         icon: Icon(Icons.admin_panel_settings, color: Colors.white),
@@ -103,8 +96,8 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.pink.shade400,
-                          shadowColor: Colors.pink.shade200,
+                          backgroundColor: Colors.pink.shade600,
+                          shadowColor: Colors.pink.shade300,
                           elevation: 8,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40),
@@ -118,7 +111,7 @@ class LandingPage extends StatelessWidget {
                     // Customer Button with Icon
                     ConstrainedBox(
                       constraints: BoxConstraints(
-                        minWidth: 200, // Set width yang sama
+                        minWidth: 200,
                       ),
                       child: ElevatedButton.icon(
                         icon: Icon(Icons.people, color: Colors.white),
@@ -131,8 +124,8 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.pink.shade400,
-                          shadowColor: Colors.pink.shade200,
+                          backgroundColor: Colors.pink.shade600,
+                          shadowColor: Colors.pink.shade300,
                           elevation: 8,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40),
