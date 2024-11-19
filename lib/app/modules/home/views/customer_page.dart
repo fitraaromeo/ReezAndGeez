@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reez_and_geez1/app/modules/home/views/faq_page.dart';
 import 'package:reez_and_geez1/app/modules/home/views/order_form_page.dart';
 import 'catalog_page.dart'; // Import the CatalogPage
 
@@ -195,7 +196,7 @@ class CustomerPage extends StatelessWidget {
                               elevation: 6,
                             ),
                             onPressed: () {
-                              Get.snackbar("Info", "Menuju halaman FAQ!");
+                              Get.to(FaqPage());
                             },
                             child: Text(
                               'FAQ',

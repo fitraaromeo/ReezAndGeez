@@ -139,7 +139,7 @@ class AdminPage extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                // Implement navigation or action for Edit FAQ
+                                Get.toNamed('/editfaq');
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.pink.shade600,

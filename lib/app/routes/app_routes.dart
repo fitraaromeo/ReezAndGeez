@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:reez_and_geez1/app/modules/home/views/catalog_page.dart';
 import 'package:reez_and_geez1/app/modules/home/views/custom_catalog.dart';
+import 'package:reez_and_geez1/app/modules/home/views/edit_faq.dart';
 import 'package:reez_and_geez1/app/modules/home/views/edit_porduct_page.dart';
+import 'package:reez_and_geez1/app/modules/home/views/faq_page.dart';
 import 'package:reez_and_geez1/app/modules/home/views/order_form_page.dart';
 import 'package:reez_and_geez1/app/modules/home/views/order_page.dart';
 import 'package:reez_and_geez1/app/modules/home/views/print_only_catalog.dart';
@@ -57,6 +59,14 @@ class AppRoutes {
     GetPage(
       name: '/orderpage',
       page: () => OrderPage(),
+    ),
+    GetPage(
+      name: '/faqpage',
+      page: () => FaqPage(),
+    ),
+    GetPage(
+      name: '/editfaq', 
+      page: () => EditFaqPage(),
     ),
   ];
 }
