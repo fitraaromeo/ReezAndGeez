@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reez_and_geez1/app/modules/home/controllers/auth_controller.dart';
 
 class LoginPage extends StatelessWidget {
+  // Inisialisasi AuthController menggunakan Get.put
+  final AuthController authController = Get.put(AuthController());
+
+  // Membuat controller untuk email dan password
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,18 +17,16 @@ class LoginPage extends StatelessWidget {
         width: double.infinity,
         child: Stack(
           children: [
-            // Custom Back Button at the top
+            // Tombol Kembali
             Positioned(
               top: 40,
               left: 20,
               child: GestureDetector(
-                onTap: () {
-                  Get.back();
-                },
+                onTap: () => Get.back(),
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade200, // Warna netral untuk tombol kembali
+                    color: Colors.grey.shade200,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
@@ -32,27 +38,27 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.arrow_back,
-                    color: Colors.black87, // Warna gelap untuk ikon
+                    color: Colors.black87,
                     size: 24,
                   ),
                 ),
               ),
             ),
 
-            // Main content
+            // Konten Utama
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Logo and title
+                    // Judul
                     Text(
                       'Reez & Geez',
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87, // Warna gelap agar kontras
+                        color: Colors.black87,
                         fontFamily: 'Cursive',
                         shadows: [
                           Shadow(
@@ -75,11 +81,11 @@ class LoginPage extends StatelessWidget {
                     ),
                     SizedBox(height: 50),
 
-                    // Login form container
+                    // Form Login
                     Container(
                       padding: EdgeInsets.all(24.0),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade100, // Warna abu terang untuk card
+                        color: Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -98,17 +104,18 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.pink.shade600, // Warna pink cerah untuk heading
+                              color: Colors.pink.shade600,
                             ),
                           ),
                           SizedBox(height: 20),
 
-                          // Username TextField
+                          // Input Email
                           TextField(
+                            controller: emailController,
                             decoration: InputDecoration(
-                              hintText: 'Username',
+                              hintText: 'Email',
                               filled: true,
-                              fillColor: Colors.grey.shade200, // Warna netral untuk input
+                              fillColor: Colors.grey.shade200,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                                 borderSide: BorderSide.none,
@@ -121,13 +128,14 @@ class LoginPage extends StatelessWidget {
                           ),
                           SizedBox(height: 16),
 
-                          // Password TextField
+                          // Input Password
                           TextField(
                             obscureText: true,
+                            controller: passwordController,
                             decoration: InputDecoration(
                               hintText: 'Password',
                               filled: true,
-                              fillColor: Colors.grey.shade200, // Warna netral untuk input
+                              fillColor: Colors.grey.shade200,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                                 borderSide: BorderSide.none,
@@ -140,32 +148,50 @@ class LoginPage extends StatelessWidget {
                           ),
                           SizedBox(height: 24),
 
-                          // Login Button
-                          ElevatedButton(
-                            onPressed: () {
-                              Get.toNamed('/adminpage');
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink.shade600, // Warna pink yang sama
-                              padding: EdgeInsets.symmetric(
-                                vertical: 14.0,
-                                horizontal: 50.0,
+                          // Tombol Login
+                          Obx(() {
+                            return ElevatedButton(
+                              onPressed: authController.isLoading.value
+                                  ? null // Disable button saat loading
+                                  : () async {
+                                      String email = emailController.text.trim();
+                                      String password = passwordController.text.trim();
+
+                                      if (email.isNotEmpty && password.isNotEmpty) {
+                                        await authController.login(email, password);
+                                      } else {
+                                        Get.snackbar(
+                                          'Error',
+                                          'Email dan password tidak boleh kosong.',
+                                          snackPosition: SnackPosition.BOTTOM,
+                                          duration: Duration(seconds: 3),
+                                        );
+                                      }
+                                    },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.pink.shade600,
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 14.0,
+                                  horizontal: 50.0,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                shadowColor: Colors.pink.shade300,
+                                elevation: 8,
                               ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              shadowColor: Colors.pink.shade300,
-                              elevation: 8,
-                            ),
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
+                              child: authController.isLoading.value
+                                  ? CircularProgressIndicator(color: Colors.white) // Loading spinner
+                                  : Text(
+                                      'Login',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                            );
+                          }),
                         ],
                       ),
                     ),
